@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Fruit Fly Adventure</title>
+    <meta
+      name="description"
+      content="A colorful Flappy Bird–style game featuring a fruit fly navigating obstacles to collect delicious fruits."
+    />
+    <meta property="og:title" content="Fruit Fly Adventure" />
+    <meta
+      property="og:description"
+      content="A colorful Flappy Bird–style game featuring a fruit fly navigating obstacles to collect delicious fruits."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Game Container holding the canvas and UI overlays -->
+    <div class="game-wrapper" id="gameWrapper">
+      <!-- Side-by-side Top-Left Scoreboard -->
+      <div class="scoreboard">
+        <!-- Box 1: Current Fruits Collected -->
+        <div class="score-box" id="scoreBoxCurrent">
+          <span class="score-label">FRUITS COLLECTED</span>
+          <div class="score-content">
+            <span class="fruit-icon">🍓</span>
+            <span class="score-value" id="currentScore">0</span>
+          </div>
+        </div>
+
+        <!-- Box 2: Highest Best Record -->
+        <div class="score-box best-box" id="scoreBoxBest">
+          <span class="score-label">BEST RECORD</span>
+          <div class="score-content">
+            <span class="fruit-icon">🍓</span>
+            <span class="score-value" id="bestScore">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main HTML5 Canvas for the game graphics -->
+      <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+      <!-- Start Screen Overlay - Centered layout showcasing the animated fruit fly -->
+      <div class="overlay" id="startScreen">
+        <div class="start-header">
+          <h1 class="game-title">Fruit Fly Adventure</h1>
+          <p class="game-subtitle">Dodge the pillars & collect sweet berries!</p>
+        </div>
+
+        <!-- Spacer allows center fruit fly on canvas to be clearly visible -->
+        <div class="start-spacer"></div>
+
+        <div class="start-footer">
+          <div class="instruction-badge">Press SPACE to Fly</div>
+          <p class="sub-instruction">or Click / Tap anywhere to Play</p>
+        </div>
+      </div>
+
+      <!-- Game Over Screen Overlay -->
+      <div class="overlay hidden" id="gameOverScreen">
+        <div class="gameover-card">
+          <h2 class="gameover-title">GAME OVER</h2>
+          <div class="new-record-tag hidden" id="newRecordTag">🎉 New Best Record!</div>
+          
+          <div class="gameover-results">
+            <div class="result-row">
+              <span class="result-label"><span>🍓</span> Fruits Collected:</span>
+              <div class="result-val-group">
+                <span class="result-val" id="finalScore">0</span>
+              </div>
+            </div>
+            <div class="result-row">
+              <span class="result-label"><span>🏆</span> Best Record:</span>
+              <div class="result-val-group">
+                <span class="result-val" id="finalBest">0</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-restart" id="restartBtn" type="button">RESTART</button>
+          <p class="restart-hint">Press SPACE to Restart</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vanilla JavaScript Game Logic using normal script tag -->
+    <script src="script.js"></script>
+  </body>
+</html>
